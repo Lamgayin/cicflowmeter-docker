@@ -1,4 +1,4 @@
-# [CICFlowMeter](https://github.com/CanadianInstituteForCybersecurity/CICFlowMeter) over Docker
+# [CICFlowMeter](https://github.com/Lamgayin/CICFlowMeter) over Docker
 
 This project provides code for building a Docker image for CICFlowMeter, a PCAP-to-flow conversion tool from the
 [Canadian Institute for Cybersecurity](https://github.com/CanadianInstituteForCybersecurity). Once built, the entry point
@@ -29,11 +29,11 @@ Computing flows from packet capture files:
 docker run --rm \
     -v <path to folder with pcap files>:/pcap \
     -v <path to output foler>:/flow \
-    cfm /pcap /flow
+    cfm network_interface output_path
 ```
 
-Interactive shell:
 
-```sh
-docker run --rm -ti cfm bash
+```Example：
+sudo docker build -t cicflowmeter_realtime -f Dockerfile .
+sudo docker run -it --net=host -v /opt/:/opt/ container_id any /opt/
 ```
